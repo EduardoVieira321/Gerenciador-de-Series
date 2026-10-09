@@ -21,10 +21,11 @@ Aplicação web desenvolvida para pesquisar séries de televisão, consultar sua
 
 ## 🖥️ Demonstração
 📸 Capturas de tela Página inicial
-<img width="1917" height="787" alt="Captura de tela 2026-10-09 133839" src="https://github.com/user-attachments/assets/08000404-553d-4138-93ba-074738804583" />
-<br>
+<img width="1917" height="787" alt="Captura de tela 2026-10-09 133839" src="https://github.com/user-attachments/assets/08000404-553d-4138-93ba-074738804583" /><br>
+
 <img width="1787" height="830" alt="Captura de tela 2026-10-09 134658" src="https://github.com/user-attachments/assets/4660cb61-c64c-4d25-9fb2-24951c7ba65e" />
 <br>
+
 Página das séries favoritadas
 <img width="1846" height="853" alt="Captura de tela 2026-10-09 134725" src="https://github.com/user-attachments/assets/63c5d040-9fb2-469a-b919-273308dc9feb" />
 
