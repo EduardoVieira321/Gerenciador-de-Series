@@ -1,1 +1,1 @@
-# Gerenciador-de-S-ries
+# Gerenciador-de-Series
