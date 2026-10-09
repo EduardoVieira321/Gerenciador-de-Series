@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Series</title>
+</head>
+<link rel="stylesheet" href="/style/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<body>
+    <header>
+        <h1>Gerenciador de Series</h1>
+        <nav>
+            <a href="favoritos.html">Favoritos</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Procure sua serie favorita</h1>
+        <div class="search-box">
+            <!-- Ícone da Lupa -->
+            <button id="btnBuscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            
+            <!-- Campo de texto -->
+            <input type="text" id="serie" placeholder="Digite a Serie...">
+    </div>
+    <div id="resultado" style="margin-top: 20px;"></div>
+    </main>
+    <script type="module" src="javascript/app.js"></script>
+</body>
+</html>

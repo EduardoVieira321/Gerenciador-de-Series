@@ -1,0 +1,361 @@
+
+/* ==========================
+   1. CONFIGURAÇÕES GERAIS
+========================== */
+
+:root {
+    --fundo: #07111c;
+    --fundo-card: #0d1b2a;
+    --fundo-card-hover: #12263a;
+    --azul: #0ea5ff;
+    --azul-hover: #38bdf8;
+    --texto: #eaf4ff;
+    --texto-secundario: #9db2c8;
+    --borda: #243b53;
+    --vermelho: #ff4567;
+    --raio: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top, #10263b 0%, var(--fundo) 55%);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================
+   2. CABEÇALHO
+========================== */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 6%;
+    background: rgba(7, 17, 28, 0.92);
+    border-bottom: 1px solid var(--borda);
+}
+
+header h1 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+header h1::first-letter {
+    color: var(--azul);
+}
+
+/* ==========================
+   3. CONTEÚDO PRINCIPAL
+========================== */
+
+main {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 48px 0 60px;
+}
+
+main > h1 {
+    margin-bottom: 24px;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+/* ==========================
+   4. CAMPO DE BUSCA
+========================== */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 36px;
+    padding: 7px;
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box:focus-within {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(14, 165, 255, 0.12);
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    color: var(--texto);
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: var(--texto-secundario);
+}
+
+.search-box button {
+    padding: 11px 20px;
+    color: white;
+    font-weight: 700;
+    background: var(--azul);
+    border: none;
+    border-radius: 9px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.search-box button:hover {
+    background: var(--azul-hover);
+    transform: translateY(-1px);
+}
+
+/* ==========================
+   5. GRADE DE SÉRIES
+========================== */
+
+#resultado,
+#resultado_favoritos {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(min(100%, 220px), 1fr)
+    );
+    align-items: stretch;
+    gap: 22px;
+    margin-top: 24px;
+}
+
+/* ==========================
+   6. CARD DE CADA SÉRIE
+========================== */
+
+.card-serie {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 12px;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        var(--fundo-card),
+        #091522
+    );
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card-serie:hover {
+    transform: translateY(-5px);
+    border-color: var(--azul);
+    box-shadow: 0 12px 30px rgba(14, 165, 255, 0.1);
+}
+
+/* Pôster */
+
+.card-serie img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: #152538;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+/* Nome da série */
+
+.card-serie h2 {
+    margin-bottom: 7px;
+    color: var(--texto);
+    font-size: 1.1rem;
+    font-weight: 750;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+/* Nota e gêneros */
+
+.card-serie p {
+    margin-bottom: 8px;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.card-serie p strong {
+    color: var(--texto);
+}
+
+/* Mantém os botões alinhados no rodapé dos cards */
+
+.card-serie .btn-favorito,
+.card-serie button {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* ==========================
+   7. BOTÃO DE FAVORITOS
+========================== */
+
+.btn-favorito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 10px 12px;
+    color: var(--azul);
+    font-weight: 700;
+    background: transparent;
+    border: 1px solid var(--azul);
+    border-radius: 9px;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+}
+
+.btn-favorito:hover {
+    color: white;
+    background: var(--azul);
+    transform: translateY(-1px);
+}
+
+.btn-favorito i {
+    font-size: 1rem;
+}
+
+/* Botão de remover na página de favoritos */
+
+.card-serie button:not(.btn-favorito) {
+    padding: 10px;
+    color: var(--vermelho);
+    font-weight: 700;
+    background: transparent;
+    border: 1px solid var(--vermelho);
+    border-radius: 9px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.card-serie button:not(.btn-favorito):hover {
+    color: white;
+    background: var(--vermelho);
+}
+
+/* ==========================
+   8. ESTADOS DE FOCO
+========================== */
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--azul-hover);
+    outline-offset: 3px;
+}
+
+/* ==========================
+   9. RESPONSIVIDADE
+========================== */
+
+@media (max-width: 600px) {
+    header {
+        padding: 16px 5%;
+    }
+
+    main {
+        width: 92%;
+        padding: 32px 0 40px;
+    }
+
+    .search-box {
+        gap: 5px;
+    }
+
+    .search-box input {
+        padding: 10px 6px;
+        font-size: 0.9rem;
+    }
+
+    .search-box button {
+        padding: 10px 13px;
+    }
+
+    #resultado,
+    #resultado_favoritos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .card-serie {
+        padding: 8px;
+    }
+
+    .card-serie h2 {
+        font-size: 0.95rem;
+    }
+
+    .card-serie p {
+        font-size: 0.8rem;
+    }
+
+    .btn-favorito,
+    .card-serie button:not(.btn-favorito) {
+        padding: 9px 5px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 350px) {
+    #resultado,
+    #resultado_favoritos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================
+   10. MOVIMENTO REDUZIDO
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
